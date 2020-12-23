@@ -1,0 +1,159 @@
+/* Generel styling */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Space Grotesk';
+}
+
+i,
+svg {
+    pointer-events: none;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Beat Containers */
+.kick-track,
+.snare-track,
+.hihat-track {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+    margin: 2rem 0;
+}
+
+/* Controls */
+.controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex: 1;
+    margin-right: 2rem;
+}
+
+.controls h1 {
+    font-size: 2rem;
+}
+
+.controls button {
+    padding: 1rem;
+    font-size: 1rem;
+    background-color: rgb(88, 88, 88);
+    color: #fff;
+    cursor: pointer;
+    border: none;
+    transition: all .5s ease;
+}
+
+.mute.active {
+    background-color: rgb(182, 182, 182);
+}
+
+.controls select {
+    padding: 1rem;
+    font-size: 1rem;
+    font-family: 'Space Grotesk';
+}
+
+/* Each Beat div */
+.kick,
+.snare,
+.hihat {
+    display: flex;
+}
+
+.pad {
+    width: 5rem;
+    height: 5rem;
+    margin: 1rem .5rem;
+    cursor: pointer;
+}
+
+.kick-pad {
+    background-color: rgb(160, 211, 224);
+}
+
+.kick-pad.active {
+    background-color: rgb(59, 197, 231);
+}
+
+.snare-pad {
+    background-color: rgb(224, 160, 208);
+}
+
+.snare-pad.active {
+    background-color: rgb(218, 58, 178);
+}
+
+.hihat-pad {
+    background-color: rgb(224, 194, 160);
+}
+
+.hihat-pad.active {
+    background-color: rgb(241, 158, 64);
+}
+
+.pad {
+    transition: all .3s ease;
+}
+
+/* Play Buttons */
+.player-container,
+.tempo {
+    width: 80%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.tempo {
+    width: 70%;
+}
+
+.tempo-slider {
+    -webkit-appearance: none;
+    padding: .2rem;
+    margin: 2rem;
+    background-color: rgb(88, 88, 88);
+    outline: none;
+    width: 60%;
+    cursor: pointer;
+    border-radius: 1rem;
+}
+
+.tempo p {
+    text-align: center;
+    font-size: 1.5rem;
+}
+
+.play {
+    width: 5rem;
+    height: 2.5rem;
+    margin-right: 2rem;
+    cursor: pointer;
+    background-color: rgb(88, 88, 88);
+    color: #fff;
+    font-size: 1.5rem;
+    font-family: 'Space Grotesk';
+}
+
+@keyframes playTrack {
+    from {
+        transform: scale(1);
+    }
+
+    to {
+        transform: scale(1.2);
+    }
+}
