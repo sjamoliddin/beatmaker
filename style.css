@@ -52,6 +52,7 @@ main {
     background-color: rgb(88, 88, 88);
     color: #fff;
     cursor: pointer;
+    outline: none;
     border: none;
     transition: all .5s ease;
 }
@@ -142,10 +143,15 @@ main {
     height: 2.5rem;
     margin-right: 2rem;
     cursor: pointer;
+    outline: none;
     background-color: rgb(88, 88, 88);
     color: #fff;
     font-size: 1.5rem;
     font-family: 'Space Grotesk';
+}
+
+.play.active{
+    background-color: rgb(56, 55, 55);
 }
 
 @keyframes playTrack {
