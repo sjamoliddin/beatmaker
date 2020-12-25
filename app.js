@@ -4,6 +4,7 @@ class DrumKit {
         this.playBtn = document.querySelector('.play');
         this.muteBtns = document.querySelectorAll('.mute');
         this.selects = document.querySelectorAll('select');
+        this.tempo = document.querySelector('.tempo-slider');
         this.kickAudio = document.querySelector('.kick-sound');
         this.snareAudio = document.querySelector('.snare-sound');
         this.hihatAudio = document.querySelector('.hihat-sound');
@@ -109,6 +110,16 @@ class DrumKit {
                 break;
         }
     }
+
+    changeTempo(e){
+        document.querySelector('.tempo-nr').innerText = e.target.value;        
+            clearInterval(this.isPlaying);
+            this.isPlaying = null;
+            this.bpm = e.target.value;
+            if(this.playBtn.classList.contains('active')){
+                this.start();                    
+            }
+    }
 }
 
 const drumKit = new DrumKit;
@@ -136,4 +147,8 @@ drumKit.selects.forEach(select => {
     select.addEventListener('change', function (e) {
         drumKit.changeSound(e);
     });
+});
+
+drumKit.tempo.addEventListener('input', function(e){
+    drumKit.changeTempo(e);    
 });
